@@ -70,7 +70,7 @@ I used the random forest regressor model's feature_importances_ to get the impor
 
 ![Model6](https://github.com/athendd/Formula-1-Regressor-Model/assets/141829395/76211d94-c85a-4c15-9f69-9b394c60e10f)
 
-The model had an initially high mean squared error of 77 so I also built a scatterplot of the model's predicted vs actual values to see what was causing my it. After looking at this model I noticed that the model had trouble predicting outliers because they are so rare but I also noticed that there was a vast difference in the accumalation of points overtime. Upon further research, I discovered that this was due to the fact that Formula 1 has changed its points system over time. From the years 1962 to 1990 the point system was 9, 6, 4, 3, 2, 1 points but in the year 1991 to 2002 that point system was changed to 10, 8, 6, 5, 4, 3, 2, 1 points and was then changed again in the year 2003 to 25, 18, 15, 12, 10, 8, 6, 4, 2, 1. 
+The model had an initially high mean squared error of 77 so I also built a scatterplot of the model's predicted vs actual values to see what was causing my it. After looking at this model I noticed that the model had trouble predicting outliers because they are so rare but I also noticed that there was a vast difference in the accumalation of points overtime. Upon further research, I discovered that this was due to the fact that Formula 1 has changed its points system over time. From the years 1961 to 1990 the point system was 9, 6, 4, 3, 2, 1 points but in the year 1991 to 2002 that point system was changed to 10, 8, 6, 5, 4, 3, 2, 1 points and was then changed again in the year 2003 to 25, 18, 15, 12, 10, 8, 6, 4, 2, 1. 
 
 **Picture of Scatterplot For Model:**
 

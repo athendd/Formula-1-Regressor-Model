@@ -9,9 +9,9 @@ The Formula 1 World Championship (1950-2023) datset comes from kaggle. The datas
 
 # Selection of Data
 
-I chose to only do five of those fourteen datasets because my computer doesn't have the computational capability to handle the entire dataset. The five datasets I chose were the results, races, constructors, constructors_standings, and constructors results. (picture of the datasets and their respective columns)
+I chose to only do five of those fourteen datasets because my computer doesn't have the computational capability to handle the entire dataset. The five datasets I chose were the results, races, constructors, constructors_standings, and constructors results. 
 
-Chosen Datasets and their Respective Columns:
+<u></u> Chosen Datasets and their Respective Columns:
 
 results: resultId, raceId, driverId, constructorId, number, grid, position, positionText, positionOrder, points, laps, time, milliseconds, fastestLap, rank, fastestLapTime, fastestLapSpeed, statusId
 races: raceId, year, round, circuitId, name, date, time, url, fp1_date, fp1_time, fp2_date, fp2_time, fp3_date, fp3_time, quali_date, quali_time, sprint_date, sprint_time
@@ -27,21 +27,18 @@ Picture of Code to Merge the Datasets:
 Picture of the Head of the Merged Dataset:
 ![Model5](https://github.com/athendd/Formula-1-Regressor-Model/assets/141829395/c7bed1de-3a36-4710-a580-a18c84ebca62)
 
-
-
-The dataset is prone to outliers. For example, in the year 1988 Mclaren won the constructor's championship with a total 199 points which was 134 more points than Ferrari who finished in second that season. I chose not to get rid of outliers since they are true values. If I got rid of the outliers then the dataset would become inacurate due to the loss of true values. 
+The dataset does contain outliers. For example, in the year 1988 Mclaren won the constructor's championship with a total 199 points which was 134 more points than Ferrari who finished in second that season. I chose not to get rid of outliers since they are true values. If I got rid of the outliers then the dataset would become inacurate due to the loss of true values. 
 
 I did make a histogram of the target variable points to see if it was skewed which ended up being the case as the target variable was right skewed. I need to get rid of the skewness in the target variable because I want the model to learn relationships and aptterns accross the entire range of values so it will be more robust and less sensitive to variations in the inputted data. I  chose to perform a log transformation on the target variable in order to give it a more even distribution. 
 
 I chose not to scale or normalize the distribution of values for the predictor variables because I'm using a random forest regressor model which inherently robust to the scale of the features. Random forests models are a hierarchy of decision trees whose decision making algorithm isn't affected by the scale of the features. This is due to the fact the the decision making algorithm focuses on the order of values and not their scale. 
 
 Picture of Histogram for Predictor Variable:
-
+![model2](https://github.com/athendd/Formula-1-Regressor-Model/assets/141829395/ae153e07-d434-40ed-bf25-feeb62cf0929)
 
 I used df.isnull().sum().sum() to get the total number of null values in the dataset which ended up being 0. Since there were no null values in the dataset there is no need for me to drop or deal with null values. 
 
 I did have to convert all my categorical data columns to numerical ones because a regessor model requires that all of its features be numerical data. I accomplished this through the use of one hot encoding with pd.get_dummies because it converts each category in the column into a dummy variable. 
-![model2](https://github.com/athendd/Formula-1-Regressor-Model/assets/141829395/c3cde784-69ec-4d85-bd46-300519306d95)
 
 # Methods
 

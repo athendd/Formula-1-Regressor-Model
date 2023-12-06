@@ -31,6 +31,10 @@ I merged these datasets using pd.merge because these datasets were connected by 
 
 ![Model5](https://github.com/athendd/Formula-1-Regressor-Model/assets/141829395/c7bed1de-3a36-4710-a580-a18c84ebca62)
 
+**Picture Of Descriptive Statistics For Each Columns In The Dataset:**
+
+![model13](https://github.com/athendd/Formula-1-Regressor-Model/assets/141829395/10b8886d-65cc-432c-94c1-2402db651a3a)
+
 The dataset does contain outliers. For example, in the year 1988 Mclaren won the constructor's championship with a total 199 points which was 134 more points than Ferrari who finished in second that season. I chose not to get rid of outliers since they are true values. If I got rid of the outliers then the dataset would become inacurate due to the loss of true values. 
 
 I did make a histogram of the target variable points to see if it was skewed which ended up being the case as the target variable was right skewed. I need to get rid of the skewness in the target variable because I want the model to learn relationships and aptterns accross the entire range of values so it will be more robust and less sensitive to variations in the inputted data. I  chose to perform a log transformation on the target variable in order to give it a more even distribution. 

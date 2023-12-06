@@ -11,7 +11,7 @@ The Formula 1 World Championship (1950-2023) datset comes from kaggle. The datas
 
 I chose to only do five of those fourteen datasets because my computer doesn't have the computational capability to handle the entire dataset. The five datasets I chose were the results, races, constructors, constructors_standings, and constructors results. 
 
-<u></u> Chosen Datasets and their Respective Columns:
+<u></u>Chosen Datasets and their Respective Columns:
 
 results: resultId, raceId, driverId, constructorId, number, grid, position, positionText, positionOrder, points, laps, time, milliseconds, fastestLap, rank, fastestLapTime, fastestLapSpeed, statusId
 races: raceId, year, round, circuitId, name, date, time, url, fp1_date, fp1_time, fp2_date, fp2_time, fp3_date, fp3_time, quali_date, quali_time, sprint_date, sprint_time

@@ -103,3 +103,4 @@ Formula 1 team, analysts, and investors can use this insights to make informed d
 
 # Coding
 
+**Linked To Main ipynb File:** content/codes/Final_Project_Model_GridSearchCV.ipynb

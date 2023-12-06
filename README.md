@@ -7,7 +7,7 @@ The Formula 1 World Championship (1950-2023) datset comes from kaggle. The datas
 
 **Picture of the 14 Datasets:**
 
-![Modelanother](https://github.com/athendd/Formula-1-Regressor-Model/assets/141829395/2aaf7b3a-264f-47f2-bc1a-f0b22ea32d99)
+![there](https://github.com/athendd/Formula-1-Regressor-Model/assets/141829395/31a549be-a78a-4035-b5ca-af4a1f36be9a)
 
 # Selection of Data
 

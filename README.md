@@ -37,9 +37,11 @@ I did make a histogram of the target variable points to see if it was skewed whi
 
 **Picture Of Histogram For Predictor Variable:**
 
-![model2](https://github.com/athendd/Formula-1-Regressor-Model/assets/141829395/ae153e07-d434-40ed-bf25-feeb62cf0929)
+![model9](https://github.com/athendd/Formula-1-Regressor-Model/assets/141829395/35024b9d-5fdd-4281-a7ed-cbd6e8c96a6d)
 
-Picture of Histogram for Predictor Variable After Log Transformation
+**Picture of Histogram for Predictor Variable After Log Transformation:**
+
+![model8](https://github.com/athendd/Formula-1-Regressor-Model/assets/141829395/05f7ba2e-8003-4636-bc51-1402d3b0f716)
 
 I chose not to scale or normalize the distribution of values for the predictor variables because I'm using a random forest regressor model which inherently robust to the scale of the features. Random forests models are a hierarchy of decision trees whose decision making algorithm isn't affected by the scale of the features. This is due to the fact the the decision making algorithm focuses on the order of values and not their scale. 
 

@@ -3,7 +3,10 @@
 I built a random forest regressor model with the purpose of predicting a Formula 1 team's point total for a single season. I was curious to figure out what features correlate strongly with points in order to figure out a Formula 1 team's season point total.  
 
 I chose to do the Formula 1 for my individual project because I'm an avid Formula 1 fan and my group for th egroup project chose a Formula 1 dataset as one of our potential three options. 
-The Formula 1 World Championship (1950-2023) datset comes from kaggle. The dataset is  made up of fourteen contected datasets.(add a picture of the daatsets) 
+The Formula 1 World Championship (1950-2023) datset comes from kaggle. The dataset is  made up of fourteen contected datasets. Here is a picture of all 14 datasets:
+
+![Modelanother](https://github.com/athendd/Formula-1-Regressor-Model/assets/141829395/2aaf7b3a-264f-47f2-bc1a-f0b22ea32d99)
+
 
 I chose to only do five of those fourteen datasets because my computer doesn't have the computational capability to handle the entire dataset. The five daatsets I chose were the results, races, constructors, constructors_standings, and constructors results. (picture of the datasets and their respective columns)
 

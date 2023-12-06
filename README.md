@@ -77,11 +77,17 @@ The model had an initially high mean squared error of 77 so I also built a scatt
 ![model1](https://github.com/athendd/Formula-1-Regressor-Model/assets/141829395/455f2a1e-4b01-4532-807d-4bff515b36c3)
 
 
-The reason for my model's high mean sqaured error was because of the fact that I was training the model on multiple different point systems which made it diffcult for the model to accuratly predict the points for a constructor in a season because it didn't have a singular system to go off of. I decided to fix this error by only using data between the years 1961 and 1990 since the point system remained the same during that time period which gives the model a singular point system to use. I aslo chose that time period since there was very little divitation between the values of points in the points system which makes it easier for the model to predict values due to the lack of variation of point's values. I found that I can predict a constructor's points in a season based off my chosen features because the model only had a mean squared error of 0.003. I used a scatter plot to compare the model's predicted values to its actual values. 
+The reason for my model's high mean sqaured error was because of the fact that I was training the model on multiple different point systems which made it diffcult for the model to accuratly predict the points for a constructor in a season because it didn't have a singular system to go off of. I decided to fix this error by only using data between the years 1961 and 1990 since the point system remained the same during that time period which gives the model a singular point system to use. I aslo chose that time period since there was very little divitation between the values of points in the points system which makes it easier for the model to predict values due to the lack of variation of point's values. I found that I can predict a constructor's points in a season based off my chosen features because the model only had a mean squared error of 0.03878298701857356. I used a scatter plot to compare the model's predicted values to its actual values. 
 
 **Picture Of Updated Scatterplot For Model:**
 
 ![model3](https://github.com/athendd/Formula-1-Regressor-Model/assets/141829395/6b213098-aacb-4a9d-960b-c55311618fb8)
+
+I realized that in order to maximize the efficiency of my model, I needed to use best the best possible hyperparameters, which are parameters whose values control the learning process of the model, for my random forest regressor model. I decided to use the hyprparameter tuning method known as grid search CV. I needed to  define lists for all potential values of each hyperparameters then import those lists into a grid search CV object along with the random forest regressor model. The grid search CV would find the best hyperparameters for the models by testing all possibe combinations of each value from the hypterparameters values' lists. The best parameters ended up being max_depth: None, min_samples_leaf: 1, min_samples_split: 2, and n_estimators: 100. The mean squared error of the model was decreased to 0.03836510698125803. 
+
+**Picture Of Code To Use GridSearchCV On Model:**
+
+![model10](https://github.com/athendd/Formula-1-Regressor-Model/assets/141829395/928c0da5-d752-4377-a412-d9ca0bb4e46f)
 
 # Results
 
@@ -90,3 +96,5 @@ The low mean sqaured error of the model shows that its features are effective pr
 # Discussion
 
 Formula 1 team, analysts, and investors can use this insights to make informed decisions about strategies, resurce allocation, and team management to improve their odds of scoring more points. The model's results are similar to what other researchers have found like the fact that better starting grid position correlate with more points accumalted. This model can be used as a base model for future research as more features can be added on such as pit stop time, qualifying time, etc in order to find other features that have a significant impact on a Formula 1 team's season point total. There can also be external factors such as advancements in technology that could impact a Formula 1 team's season point total that could be incorporated into future models. The model could also be improved to incorporate data from other time periods or base the model on more current time periods, like building a model for the modern Formula 1 points system so it can predict future results. 
+
+# Coding

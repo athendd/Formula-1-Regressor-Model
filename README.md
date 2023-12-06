@@ -54,7 +54,13 @@ I did have to convert all my categorical data columns to numerical ones because 
     matplotlib: for data visualizations and graphs
     scikit learn: to create and build the random forest regressor machine learning model 
 
-I chose to use a regressor random forest model because I needed to use a regressor model in order to predict the points for a team and I chose random forest because of its ability to avoid overfitting the data. I also chose the random forest regressor become it runs effecentially on large datasets such as Formula 1 World Championship(1950-2023). I used the random forest regressor model's feature_importances_ to get the importance of each feature with respect to the model. I did this to not only figure out which features best contributed to the dataset but also how well they contributed to the dataset. I then used this information to get rid of features that had a very weak correlation because they provided little to no useful data to the model. 
+I chose to use a regressor random forest model because I needed to use a regressor model in order to predict the points for a team and I chose random forest because of its ability to avoid overfitting the data. I also chose the random forest regressor become it runs effecentially on large datasets such as Formula 1 World Championship(1950-2023). 
+
+**Picture of Code To Build The Random Forest Regressor Model And Fit It To The Dataset:**
+
+![Model7](https://github.com/athendd/Formula-1-Regressor-Model/assets/141829395/ded2f822-144a-4559-973a-0bfc30ff1ec1)
+
+I used the random forest regressor model's feature_importances_ to get the importance of each feature with respect to the model. I did this to not only figure out which features best contributed to the dataset but also how well they contributed to the dataset. I then used this information to get rid of features that had a very weak correlation because they provided little to no useful data to the model. 
 
 **Picture of Code to get Importance of each Feature:**
 

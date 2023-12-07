@@ -1,17 +1,19 @@
 # Formula-1-Regressor-Model
 
-I built a random forest regressor model with the purpose of predicting a Formula 1 team's point total for a single season. I was curious to figure out what features correlate strongly with points in order to figure out a Formula 1 team's season point total.  
+The objective of the project was to build a random forest regressor model that could accurately predict a given Formula 1 team's point total for a single season. I was curious to figure out what features correlate strongly with points.  
 
-I chose to do the Formula 1 for my individual project because I'm an avid Formula 1 fan and my group for the group project chose a Formula 1 dataset as one of our potential three options. 
-The Formula 1 World Championship (1950-2023) datset comes from kaggle. The dataset is  made up of fourteen contected datasets. 
+I chose to do the Formula 1 for my individual project because I'm an avid Formula 1 fan. I had become interested in the idea of building a machine learning model to predict Formula1 results after my gorup for the group project chose a Formula 1 dataset as one of the potential three options for the project. 
 
-**Picture Of The 14 Datasets:**
+# Selection of Data
+
+I used the Formula 1 World Championship (1950-2023) datset from kaggle. The dataset is made up of 14 contected datasets. 
+
+**The 14 Datasets:**
 
 ![there](https://github.com/athendd/Formula-1-Regressor-Model/assets/141829395/31a549be-a78a-4035-b5ca-af4a1f36be9a)
 
-# Selection Of Data
 
-I chose to only do five of those fourteen datasets because my computer doesn't have the computational capability to handle the entire dataset. The five datasets I chose were the results, races, constructors, constructors_standings, and constructors results. 
+I chose to only use 5 of the 14 datasets because my computer lacks the computational abilities to handle the entire dataset. The 5 datasets I chose were the results, races, constructors, constructors_standings, and constructors results. I chose these datasets because I beleived the dataset's feature could have a strong correlation with points or the datasets contained a lot of features that could privde insightful data and be connected to one of the other datasets. 
 
 **Chosen Datasets And Their Respective Columns:**
 
@@ -21,37 +23,41 @@ I chose to only do five of those fourteen datasets because my computer doesn't h
     constructor_results: constructorResultsId, raceId, constructorId, points, status
     constructor_standings: constructorStandingsId, raceId, constructorId, points, position, positionText, wins
 
-I merged these datasets using pd.merge because these datasets were connected by key columns. I also needed to merge these datasets in order to have a singular dataset to train the model on. Here are pictures of the code used to merge the datasets and the head of the merged dataset:
+I merged these datasets using pd.merge because many of these datasets contained the same columns. I also needed to merge these datasets in order to have a singular dataset to train the model on. I then checked the head of the merged dataset using df.head() to ensure the merging had been performed properly. I then looked at the descriptive statistics for each column using df.describe() to get an understanding of the characteristics of each column and to learn which columns were numerical and which ones weren't.
 
-**Picture Of Code To Merge The Datasets:**
+**Code To Merge The Datasets:**
 
 ![Model4](https://github.com/athendd/Formula-1-Regressor-Model/assets/141829395/0a503a29-207e-4af7-b179-9ae15b9232ac)
 
-**Picture Of The Head Of The Merged Dataset:**
+**Head Of The Merged Dataset:**
 
 ![Model5](https://github.com/athendd/Formula-1-Regressor-Model/assets/141829395/c7bed1de-3a36-4710-a580-a18c84ebca62)
 
-**Picture Of Descriptive Statistics For Each Columns In The Dataset:**
+**Descriptive Statistics For Each Columns In The Dataset:**
 
 ![model13](https://github.com/athendd/Formula-1-Regressor-Model/assets/141829395/10b8886d-65cc-432c-94c1-2402db651a3a)
 
-The dataset does contain outliers. For example, in the year 1988 Mclaren won the constructor's championship with a total 199 points which was 134 more points than Ferrari who finished in second that season. I chose not to get rid of outliers since they are true values. If I got rid of the outliers then the dataset would become inacurate due to the loss of true values. 
+The dataset does contain outliers. For example, in the year 1988 Mclaren won the constructor's championship with a total 199 points which was 134 more points than Ferrari who finished in second that season. I chose not to get rid of outliers since they represent true values. If I got rid of the outliers then the dataset would become inacurate due to the loss of these true values. 
 
-I did make a histogram of the target variable points to see if it was skewed which ended up being the case as the target variable was right skewed. I need to get rid of the skewness in the target variable because I want the model to learn relationships and aptterns accross the entire range of values so it will be more robust and less sensitive to variations in the inputted data. I  chose to perform a log transformation on the target variable in order to give it a more even distribution. 
+A histogram of the target variable (points) revealed that its distributions of values was right skewed. I need to get rid of this skewness because I want the model to learn relationships and patterns accross the entire range of values so it will be more robust. I chose to perform a log transformation on the target variable in order to give it a more even distribution of values. 
 
-**Picture Of Histogram For Predictor Variable:**
+**Histogram For Target Variable Before Log Transformation:**
 
 ![model9](https://github.com/athendd/Formula-1-Regressor-Model/assets/141829395/35024b9d-5fdd-4281-a7ed-cbd6e8c96a6d)
 
-**Picture of Histogram for Predictor Variable After Log Transformation:**
+**PHistogram for Predictor Variable After Log Transformation:**
 
 ![model8](https://github.com/athendd/Formula-1-Regressor-Model/assets/141829395/05f7ba2e-8003-4636-bc51-1402d3b0f716)
 
-I chose not to scale or normalize the distribution of values for the predictor variables because I'm using a random forest regressor model which inherently robust to the scale of the features. Random forests models are a hierarchy of decision trees whose decision making algorithm isn't affected by the scale of the features. This is due to the fact the the decision making algorithm focuses on the order of values and not their scale. 
+I chose not to scale the predictor variable or normalize the distribution of values for the predictor variables because a random forest regressor model is inherently robust to the scale of the features. The decision trees that make up a random forest regressor model have a decision making algorithm that isn't affected by the scale of the features because it focuses on the ordr of values.
 
 I used df.isnull().sum().sum() to get the total number of null values in the dataset which ended up being 0. Since there were no null values in the dataset there is no need for me to drop or deal with null values. 
 
 I did have to convert all my categorical data columns to numerical ones because a regessor model requires that all of its features be numerical data. I accomplished this through the use of one hot encoding with pd.get_dummies because it converts each category in the column into a dummy variable. 
+
+**Dataset's Columns After One Hot Encoding:**
+
+![Model_Columns](https://github.com/athendd/Formula-1-Regressor-Model/assets/141829395/4796f141-ce4d-43be-8a59-c61343492267)
 
 # Methods
 
